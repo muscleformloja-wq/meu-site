@@ -1,236 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>Meu Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cole aqui o conteúdo do body do CodePen -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muscle Form - Loja de Suplementos</title>
-  <!-- Fonte Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset e base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #fff;
-      color: #555;
-      line-height: 1.6;
-      padding-bottom: 80px;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Header */
-    header {
-      background: #6a4ca6; /* roxo médio */
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    header img.logo {
-      height: 45px;
-      margin-right: 10px;
-    }
-    header h1 {
-      font-weight: 700;
-      font-size: 1.6rem;
-    }
-    nav a {
-      color: white;
-      margin-left: 15px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #432f6d;
-    }
-
-    /* Hero */
-    .hero {
-      background: #e9e6f5;
-      color: #3c3c3c;
-      text-align: center;
-      padding: 70px 20px 50px;
-    }
-    .hero h2 {
-      font-size: 2.4rem;
-      margin-bottom: 15px;
-      font-weight: 700;
-      color: #6a4ca6;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .btn {
-      display: inline-block;
-      background: #6a4ca6;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #4b3586;
-    }
-
-    /* Produtos */
-    .produtos {
-      max-width: 1100px;
-      margin: 50px auto 60px;
-      padding: 0 20px;
-    }
-    .produtos h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      text-align: center;
-      color: #6a4ca6;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-      gap: 30px;
-    }
-    .produto {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      padding: 15px;
-      text-align: center;
-      transition: box-shadow 0.3s ease;
-    }
-    .produto:hover {
-      box-shadow: 0 7px 18px rgba(0,0,0,0.15);
-    }
-    .produto img {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      object-fit: contain;
-      height: 200px;
-    }
-    .produto h3 {
-      font-size: 1.2rem;
-      color: #4b3586;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    .produto p {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      font-weight: 700;
-      color: #6a4ca6;
-    }
-    .produto button {
-      background: #6a4ca6;
-      color: white;
-      border: none;
-      padding: 10px 25px;
-      border-radius: 25px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .produto button:hover {
-      background: #4b3586;
-    }
-
-    /* Sobre */
-    .sobre {
-      max-width: 900px;
-      margin: 50px auto 80px;
-      padding: 20px;
-      text-align: center;
-      color: #3c3c3c;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-    .sobre h2 {
-      font-size: 2rem;
-      margin-bottom: 25px;
-      color: #6a4ca6;
-      font-weight: 700;
-    }
-    .sobre p {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    /* Destaque em preto */
-    .sobre p strong {
-      color: #000;
-      font-weight: 700;
-    }
-
-    /* Contato */
-    .contato {
-      max-width: 600px;
-      margin: 50px auto 100px;
-      padding: 20px;
-      text-align: center;
-    }
-    .contato h2 {
-      font-size: 2rem;
-      color: #6a4ca6;
-      margin-bottom: 15px;
-    }
-    .contato p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: #3c3c3c;
-    }
-
-    /* Footer */
-    footer {
-      background: #6a4ca6;
-      color: white;
-      text-align: center;
-      padding: 15px 10px;
-      font-size: 0.9rem;
-    }
-
-    /* Botão WhatsApp fixo */
-    .whatsapp-fixo {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25d366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      z-index: 10000;
-      transition: background 0.3s;
-    }
-    .whatsapp-fixo:hover {
-      background: #128c43;
-    }
-    .whatsapp-fixo img {
-      width: 35px;
-      height: 35px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Lo
+    <h1>Muscle Form</h1>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Suplementos de Alta Performance</h2>
+    <p>Qualidade e resultados para o seu treino</p>
+    <a href="#produtos" class="btn">Ver Produtos</a>
+  </section>
+
+  <section id="produtos" class="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="grid">
+      <div class="produto">
+        <img src="https://via.placeholder.com/200x200" alt="Whey Protein">
+        <h3>Whey Protein</h3>
+        <p>R$ 149,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/200x200" alt="Creatina">
+        <h3>Creatina 300g</h3>
+        <p>R$ 99,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/200x200" alt="Pré-treino">
+        <h3>Pré-Treino Hardcore</h3>
+        <p>R$ 89,90</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <h2>Sobre a Muscle Form</h2>
+    <p>Somos uma loja especializada em suplementos alimentares para atletas e praticantes de musculação. Nosso compromisso é entregar qualidade, confiança e resultado.</p>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <p>Fale com a gente pelo WhatsApp:</p>
+    <a href="https://wa.me/5511999999999" target="_blank" class="btn">Chamar no WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Muscle Form - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
