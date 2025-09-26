@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Meu Site</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Cole aqui o conteúdo do body do CodePen -->
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
