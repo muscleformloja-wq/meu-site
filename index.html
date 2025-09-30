@@ -36,54 +36,48 @@
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Whey Protein">
           <h3>Whey Protein</h3>
-          <p class="descricao">Proteína de rápida absorção ideal para ganho de massa muscular e recuperação pós-treino.</p>
-          <p class="preco">R$ 149,90</p>
-          <button class="btn">Comprar</button>
+          <p>R$ 149,90</p>
+          <button class="btn" onclick="abrirModal('Whey Protein', 'Proteína de rápida absorção ideal para ganho de massa muscular e recuperação pós-treino.')">Comprar</button>
         </div>
 
         <!-- Produto 2 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Creatina 300g">
           <h3>Creatina 300g</h3>
-          <p class="descricao">Aumenta força, explosão muscular e melhora o desempenho em treinos intensos.</p>
-          <p class="preco">R$ 99,90</p>
-          <button class="btn">Comprar</button>
+          <p>R$ 99,90</p>
+          <button class="btn" onclick="abrirModal('Creatina 300g', 'Aumenta força, explosão muscular e melhora o desempenho em treinos intensos.')">Comprar</button>
         </div>
 
         <!-- Produto 3 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Pré-Treino Hardcore">
           <h3>Pré-Treino Hardcore</h3>
-          <p class="descricao">Energia, foco e resistência para treinos de alta intensidade.</p>
-          <p class="preco">R$ 89,90</p>
-          <button class="btn">Comprar</button>
+          <p>R$ 89,90</p>
+          <button class="btn" onclick="abrirModal('Pré-Treino Hardcore', 'Energia, foco e resistência para treinos de alta intensidade.')">Comprar</button>
         </div>
 
         <!-- Produto 4 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="BCAA 2:1:1">
           <h3>BCAA 2:1:1</h3>
-          <p class="descricao">Aminoácidos essenciais para recuperação muscular e redução da fadiga.</p>
-          <p class="preco">R$ 69,90</p>
-          <button class="btn">Comprar</button>
+          <p>R$ 69,90</p>
+          <button class="btn" onclick="abrirModal('BCAA 2:1:1', 'Aminoácidos essenciais para recuperação muscular e redução da fadiga.')">Comprar</button>
         </div>
 
         <!-- Produto 5 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Glutamina 300g">
           <h3>Glutamina 300g</h3>
-          <p class="descricao">Fortalece o sistema imunológico e auxilia na recuperação muscular.</p>
-          <p class="preco">R$ 89,90</p>
-          <button class="btn">Comprar</button>
+          <p>R$ 89,90</p>
+          <button class="btn" onclick="abrirModal('Glutamina 300g', 'Fortalece o sistema imunológico e auxilia na recuperação muscular.')">Comprar</button>
         </div>
 
         <!-- Produto 6 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Albumina Natural">
           <h3>Albumina Natural</h3>
-          <p class="descricao">Fonte de proteína de absorção lenta, ideal para manter o anabolismo por mais tempo.</p>
-          <p class="preco">R$ 49,90</p>
-          <button class="btn">Comprar</button>
+          <p>R$ 49,90</p>
+          <button class="btn" onclick="abrirModal('Albumina Natural', 'Fonte de proteína de absorção lenta, ideal para manter o anabolismo por mais tempo.')">Comprar</button>
         </div>
 
       </div>
@@ -115,5 +109,39 @@
       <p>&copy; 2025 Muscle Form - Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h3 id="modalTitulo"></h3>
+      <p id="modalDescricao"></p>
+      <a id="whatsappBtn" href="#" target="_blank" class="btn btn-whatsapp">Comprar pelo WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal(titulo, descricao) {
+      document.getElementById("modalTitulo").innerText = titulo;
+      document.getElementById("modalDescricao").innerText = descricao;
+      document.getElementById("modal").style.display = "flex";
+      
+      // Atualiza botão WhatsApp com o nome do produto
+      const msg = `Olá! Tenho interesse no produto: ${titulo}`;
+      document.getElementById("whatsappBtn").href = "https://wa.me/5541992006291?text=" + encodeURIComponent(msg);
+    }
+
+    function fecharModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    // Fecha modal clicando fora
+    window.onclick = function(event) {
+      const modal = document.getElementById("modal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
