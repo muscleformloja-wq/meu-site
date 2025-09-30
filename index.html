@@ -6,6 +6,36 @@
   <title>Muscle Form - Loja de Suplementos</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Botão flutuante do WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1ebe5d;
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -36,48 +66,54 @@
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Whey Protein">
           <h3>Whey Protein</h3>
-          <p>R$ 149,90</p>
-          <button class="btn">Comprar</button>
+          <p class="descricao">Proteína de rápida absorção ideal para ganho de massa muscular e recuperação pós-treino.</p>
+          <p class="preco">R$ 149,90</p>
+          <a href="https://wa.me/5541992006291?text=Olá,%20gostaria%20de%20comprar%20o%20Whey%20Protein." target="_blank" class="btn">Comprar</a>
         </div>
 
         <!-- Produto 2 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Creatina 300g">
           <h3>Creatina 300g</h3>
-          <p>R$ 99,90</p>
-          <button class="btn">Comprar</button>
+          <p class="descricao">Aumenta força, explosão muscular e melhora o desempenho em treinos intensos.</p>
+          <p class="preco">R$ 99,90</p>
+          <a href="https://wa.me/5541992006291?text=Olá,%20gostaria%20de%20comprar%20a%20Creatina%20300g." target="_blank" class="btn">Comprar</a>
         </div>
 
         <!-- Produto 3 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Pré-Treino Hardcore">
           <h3>Pré-Treino Hardcore</h3>
-          <p>R$ 89,90</p>
-          <button class="btn">Comprar</button>
+          <p class="descricao">Energia, foco e resistência para treinos de alta intensidade.</p>
+          <p class="preco">R$ 89,90</p>
+          <a href="https://wa.me/5541992006291?text=Olá,%20gostaria%20de%20comprar%20o%20Pré-Treino%20Hardcore." target="_blank" class="btn">Comprar</a>
         </div>
 
         <!-- Produto 4 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="BCAA 2:1:1">
           <h3>BCAA 2:1:1</h3>
-          <p>R$ 69,90</p>
-          <button class="btn">Comprar</button>
+          <p class="descricao">Aminoácidos essenciais para recuperação muscular e redução da fadiga.</p>
+          <p class="preco">R$ 69,90</p>
+          <a href="https://wa.me/5541992006291?text=Olá,%20gostaria%20de%20comprar%20o%20BCAA%202:1:1." target="_blank" class="btn">Comprar</a>
         </div>
 
         <!-- Produto 5 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Glutamina 300g">
           <h3>Glutamina 300g</h3>
-          <p>R$ 89,90</p>
-          <button class="btn">Comprar</button>
+          <p class="descricao">Fortalece o sistema imunológico e auxilia na recuperação muscular.</p>
+          <p class="preco">R$ 89,90</p>
+          <a href="https://wa.me/5541992006291?text=Olá,%20gostaria%20de%20comprar%20a%20Glutamina%20300g." target="_blank" class="btn">Comprar</a>
         </div>
 
         <!-- Produto 6 -->
         <div class="produto">
           <img src="https://via.placeholder.com/250x250" alt="Albumina Natural">
           <h3>Albumina Natural</h3>
-          <p>R$ 49,90</p>
-          <button class="btn">Comprar</button>
+          <p class="descricao">Fonte de proteína de absorção lenta, ideal para manter o anabolismo por mais tempo.</p>
+          <p class="preco">R$ 49,90</p>
+          <a href="https://wa.me/5541992006291?text=Olá,%20gostaria%20de%20comprar%20a%20Albumina%20Natural." target="_blank" class="btn">Comprar</a>
         </div>
 
       </div>
@@ -109,5 +145,12 @@
       <p>&copy; 2025 Muscle Form - Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5541992006291?text=Olá,%20tenho%20interesse%20em%20seus%20produtos!" 
+     class="whatsapp-float" 
+     target="_blank">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp"/>
+  </a>
 </body>
 </html>
