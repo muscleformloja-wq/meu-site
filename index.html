@@ -9,37 +9,24 @@
     /* =======================
        VARIÁVEIS E RESET
     ======================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
     :root {
       --roxo: #6a0dad;
       --roxo-escuro: #4a0072;
       --cinza-claro: #f7f7f7;
       --branco: #fff;
       --texto: #444;
+      --overlay: rgba(0,0,0,0.7);
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--cinza-claro);
       color: var(--texto);
       overflow-x: hidden;
-      line-height: 1.6;
+      line-height:1.6;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    html { scroll-behavior: smooth; }
+    .container { width:90%; max-width:1200px; margin:0 auto; }
 
     /* =======================
        HEADER
@@ -47,214 +34,125 @@
     header {
       background: var(--roxo);
       color: var(--branco);
-      padding: 1rem 0;
+      padding:1rem 0;
       position: sticky;
-      top: 0;
+      top:0;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    header h1 {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    nav a {
-      color: var(--branco);
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ddd;
-    }
+    header .container { display:flex; align-items:center; justify-content:space-between; }
+    header h1 { font-size:1.6rem; font-weight:700; }
+    nav a { color: var(--branco); margin-left:1.5rem; text-decoration:none; font-weight:500; transition:0.3s; }
+    nav a:hover { color:#ddd; }
 
     /* =======================
-       HERO SECTION
+       HERO
     ======================= */
     .hero {
-      background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+      background: linear-gradient(135deg,var(--roxo),var(--roxo-escuro));
       color: var(--branco);
-      text-align: center;
-      padding: 6rem 1rem;
+      text-align:center;
+      padding:6rem 1rem;
     }
-
-    .hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      animation: fadeInDown 1s ease;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      animation: fadeIn 1.5s ease;
-    }
-
+    .hero h2 { font-size:2.8rem; margin-bottom:1rem; font-weight:700; }
+    .hero p { font-size:1.2rem; margin-bottom:2rem; }
     .btn {
-      display: inline-block;
-      background: var(--branco);
-      color: var(--roxo);
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
+      display:inline-block;
+      background:var(--branco);
+      color:var(--roxo);
+      padding:0.9rem 2rem;
+      border-radius:50px;
+      font-weight:600;
+      text-decoration:none;
+      transition:0.3s;
+      border:2px solid transparent;
     }
-
-    .btn:hover {
-      background: transparent;
-      color: var(--branco);
-      border: 2px solid var(--branco);
-    }
+    .btn:hover { background:transparent; color:var(--branco); border:2px solid var(--branco); }
 
     /* =======================
        PRODUTOS
     ======================= */
-    .produtos {
-      padding: 5rem 0;
-      text-align: center;
-    }
-
-    .produtos h2 {
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      color: var(--roxo-escuro);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
+    .produtos { padding:5rem 0; text-align:center; }
+    .produtos h2 { font-size:2.2rem; margin-bottom:2rem; color:var(--roxo-escuro); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
     .produto {
       background: var(--branco);
-      border-radius: 15px;
-      padding: 1.5rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      border-radius:15px;
+      padding:1.5rem;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      cursor:pointer;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .produto:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    .produto img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .produto h3 {
-      color: var(--roxo);
-      margin-bottom: 0.5rem;
-    }
-
-    .produto p {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .produto .btn {
-      background: var(--roxo);
-      color: var(--branco);
-      border: none;
-    }
-
-    .produto .btn:hover {
-      background: var(--roxo-escuro);
-    }
+    .produto:hover { transform: translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+    .produto img { width:100%; border-radius:10px; margin-bottom:1rem; }
+    .produto h3 { color: var(--roxo); margin-bottom:0.5rem; }
+    .produto p { font-size:1.1rem; font-weight:600; }
 
     /* =======================
        SOBRE
     ======================= */
-    .sobre {
-      background: var(--branco);
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-
-    .sobre h2 {
-      color: var(--roxo);
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-
-    .sobre p {
-      max-width: 800px;
-      margin: 0 auto;
-      color: var(--texto);
-      font-size: 1.05rem;
-    }
+    .sobre { background: var(--branco); padding:4rem 1rem; text-align:center; }
+    .sobre h2 { color: var(--roxo); margin-bottom:1.5rem; font-size:2rem; }
+    .sobre p { max-width:800px; margin:0 auto; font-size:1.05rem; color:var(--texto); }
 
     /* =======================
        CONTATO
     ======================= */
-    .contato {
-      background: var(--roxo);
-      color: var(--branco);
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-
-    .contato h2 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-
+    .contato { background: var(--roxo); color: var(--branco); text-align:center; padding:4rem 1rem; }
+    .contato h2 { font-size:2rem; margin-bottom:1rem; }
     .whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #25d366;
-      color: #fff;
-      padding: 0.9rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
+      display:inline-flex; align-items:center; gap:0.5rem;
+      background:#25d366; color:#fff; padding:0.9rem 1.8rem;
+      border-radius:50px; font-weight:600; text-decoration:none;
       transition: transform 0.3s;
     }
-
-    .whatsapp:hover {
-      transform: scale(1.05);
-    }
+    .whatsapp:hover { transform:scale(1.05); }
 
     /* =======================
        FOOTER
     ======================= */
-    footer {
-      background: var(--roxo-escuro);
-      color: var(--branco);
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-    }
+    footer { background: var(--roxo-escuro); color: var(--branco); text-align:center; padding:1rem 0; font-size:0.9rem; }
 
     /* =======================
-       ANIMAÇÕES
+       MODAL
     ======================= */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .modal-overlay {
+      position: fixed;
+      top:0; left:0; width:100%; height:100%;
+      background: var(--overlay);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      opacity:0;
+      visibility:hidden;
+      transition: 0.3s;
+      z-index: 10000;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .modal-overlay.active { opacity:1; visibility:visible; }
+    .modal {
+      background: var(--branco);
+      padding:2rem;
+      border-radius:15px;
+      max-width:500px;
+      width:90%;
+      text-align:center;
+      position: relative;
     }
+    .modal img { width:100%; border-radius:10px; margin-bottom:1rem; }
+    .modal h3 { color:var(--roxo); margin-bottom:0.5rem; }
+    .modal p { margin-bottom:1rem; font-size:1rem; color:#333; }
+    .close-btn {
+      display:inline-block;
+      background:var(--roxo);
+      color:var(--branco);
+      padding:0.5rem 1.5rem;
+      border-radius:50px;
+      font-weight:600;
+      text-decoration:none;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .close-btn:hover { background: var(--roxo-escuro); }
   </style>
 </head>
 <body>
@@ -281,29 +179,35 @@
     <div class="container">
       <h2>Nossos Produtos</h2>
       <div class="grid">
-        <div class="produto">
+        <div class="produto" onclick="openModal('whey')">
           <img src="https://via.placeholder.com/250x250" alt="Whey Protein">
           <h3>Whey Protein</h3>
           <p>R$ 149,90</p>
-          <button class="btn">Comprar</button>
         </div>
-        <div class="produto">
+        <div class="produto" onclick="openModal('creatina')">
           <img src="https://via.placeholder.com/250x250" alt="Creatina 300g">
           <h3>Creatina 300g</h3>
           <p>R$ 99,90</p>
-          <button class="btn">Comprar</button>
         </div>
-        <div class="produto">
+        <div class="produto" onclick="openModal('pretreino')">
           <img src="https://via.placeholder.com/250x250" alt="Pré-Treino Hardcore">
           <h3>Pré-Treino Hardcore</h3>
           <p>R$ 89,90</p>
-          <button class="btn">Comprar</button>
         </div>
-        <div class="produto">
+        <div class="produto" onclick="openModal('bcaa')">
           <img src="https://via.placeholder.com/250x250" alt="BCAA 2:1:1">
           <h3>BCAA 2:1:1</h3>
           <p>R$ 69,90</p>
-          <button class="btn">Comprar</button>
+        </div>
+        <div class="produto" onclick="openModal('glutamina')">
+          <img src="https://via.placeholder.com/250x250" alt="Glutamina 300g">
+          <h3>Glutamina 300g</h3>
+          <p>R$ 89,90</p>
+        </div>
+        <div class="produto" onclick="openModal('albumina')">
+          <img src="https://via.placeholder.com/250x250" alt="Albumina Natural">
+          <h3>Albumina Natural</h3>
+          <p>R$ 49,90</p>
         </div>
       </div>
     </div>
@@ -332,5 +236,77 @@
       <p>&copy; 2025 Muscle Form - Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <!-- =======================
+       MODAL
+  ======================= -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+      <img id="modalImg" src="" alt="Produto">
+      <h3 id="modalTitle"></h3>
+      <p id="modalPrice"></p>
+      <p id="modalDesc"></p>
+      <span class="close-btn" onclick="closeModal()">Fechar</span>
+    </div>
+  </div>
+
+  <script>
+    const produtos = {
+      whey: {
+        title: "Whey Protein",
+        price: "R$ 149,90",
+        img: "https://via.placeholder.com/250x250",
+        desc: "Suplemento ideal para ganho de massa muscular e recuperação após treinos intensos."
+      },
+      creatina: {
+        title: "Creatina 300g",
+        price: "R$ 99,90",
+        img: "https://via.placeholder.com/250x250",
+        desc: "Aumenta força e performance nos treinos de alta intensidade."
+      },
+      pretreino: {
+        title: "Pré-Treino Hardcore",
+        price: "R$ 89,90",
+        img: "https://via.placeholder.com/250x250",
+        desc: "Energético e estimulante para maximizar sua performance antes do treino."
+      },
+      bcaa: {
+        title: "BCAA 2:1:1",
+        price: "R$ 69,90",
+        img: "https://via.placeholder.com/250x250",
+        desc: "Aminoácidos essenciais para recuperação muscular e redução da fadiga."
+      },
+      glutamina: {
+        title: "Glutamina 300g",
+        price: "R$ 89,90",
+        img: "https://via.placeholder.com/250x250",
+        desc: "Auxilia na recuperação muscular e fortalece o sistema imunológico."
+      },
+      albumina: {
+        title: "Albumina Natural",
+        price: "R$ 49,90",
+        img: "https://via.placeholder.com/250x250",
+        desc: "Proteína de alta qualidade, ideal para complementar sua alimentação diária."
+      }
+    };
+
+    function openModal(id) {
+      const produto = produtos[id];
+      document.getElementById('modalImg').src = produto.img;
+      document.getElementById('modalTitle').textContent = produto.title;
+      document.getElementById('modalPrice').textContent = produto.price;
+      document.getElementById('modalDesc').textContent = produto.desc;
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    // Fechar modal ao clicar fora
+    document.getElementById('modalOverlay').addEventListener('click', (e) => {
+      if(e.target.id === 'modalOverlay') closeModal();
+    });
+  </script>
 </body>
 </html>
