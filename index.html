@@ -86,12 +86,21 @@
   <div class="container">
     <h2>Nossos Produtos</h2>
     <div class="grid">
+      <!-- Produtos existentes -->
       <div class="produto" onclick="openModal('whey')"><img src="https://via.placeholder.com/250x250" alt="Whey Protein"><h3>Whey Protein</h3><p>R$ 149,90</p></div>
       <div class="produto" onclick="openModal('creatina')"><img src="https://via.placeholder.com/250x250" alt="Creatina 300g"><h3>Creatina 300g</h3><p>R$ 99,90</p></div>
       <div class="produto" onclick="openModal('pretreino')"><img src="https://via.placeholder.com/250x250" alt="Pré-Treino Hardcore"><h3>Pré-Treino Hardcore</h3><p>R$ 89,90</p></div>
       <div class="produto" onclick="openModal('bcaa')"><img src="https://via.placeholder.com/250x250" alt="BCAA 2:1:1"><h3>BCAA 2:1:1</h3><p>R$ 69,90</p></div>
       <div class="produto" onclick="openModal('glutamina')"><img src="https://via.placeholder.com/250x250" alt="Glutamina 300g"><h3>Glutamina 300g</h3><p>R$ 89,90</p></div>
       <div class="produto" onclick="openModal('albumina')"><img src="https://via.placeholder.com/250x250" alt="Albumina Natural"><h3>Albumina Natural</h3><p>R$ 49,90</p></div>
+
+      <!-- Novos produtos -->
+      <div class="produto" onclick="openModal('colageno')"><img src="https://via.placeholder.com/250x250" alt="Colágeno"><h3>Colágeno</h3><p>R$ 79,90</p></div>
+      <div class="produto" onclick="openModal('omega3')"><img src="https://via.placeholder.com/250x250" alt="Ômega 3"><h3>Ômega 3</h3><p>R$ 89,90</p></div>
+      <div class="produto" onclick="openModal('multivitaminico')"><img src="https://via.placeholder.com/250x250" alt="Multivitamínico"><h3>Multivitamínico</h3><p>R$ 69,90</p></div>
+      <div class="produto" onclick="openModal('hipercalorico')"><img src="https://via.placeholder.com/250x250" alt="Hiper Calórico"><h3>Hiper Calórico</h3><p>R$ 119,90</p></div>
+      <div class="produto" onclick="openModal('magnesioInositol')"><img src="https://via.placeholder.com/250x250" alt="Magnésio Inositol"><h3>Magnésio Inositol</h3><p>R$ 59,90</p></div>
+      <div class="produto" onclick="openModal('pastaAmendoim')"><img src="https://via.placeholder.com/250x250" alt="Pasta de Amendoim"><h3>Pasta de Amendoim</h3><p>R$ 39,90</p></div>
     </div>
   </div>
 </section>
@@ -120,6 +129,7 @@
   </div>
 </footer>
 
+<!-- Modal -->
 <div id="modalOverlay" class="modal-overlay">
   <div class="modal">
     <img id="modalImg" src="" alt="Produto">
@@ -137,7 +147,14 @@ const produtos = {
   pretreino:{title:"Pré-Treino Hardcore",price:"R$ 89,90",img:"https://via.placeholder.com/250x250",desc:"Energético e estimulante para maximizar sua performance antes do treino."},
   bcaa:{title:"BCAA 2:1:1",price:"R$ 69,90",img:"https://via.placeholder.com/250x250",desc:"Aminoácidos essenciais para recuperação muscular e redução da fadiga."},
   glutamina:{title:"Glutamina 300g",price:"R$ 89,90",img:"https://via.placeholder.com/250x250",desc:"Auxilia na recuperação muscular e fortalece o sistema imunológico."},
-  albumina:{title:"Albumina Natural",price:"R$ 49,90",img:"https://via.placeholder.com/250x250",desc:"Proteína de alta qualidade, ideal para complementar sua alimentação diária."}
+  albumina:{title:"Albumina Natural",price:"R$ 49,90",img:"https://via.placeholder.com/250x250",desc:"Proteína de alta qualidade, ideal para complementar sua alimentação diária."},
+
+  colageno:{title:"Colágeno", price:"R$ 79,90", img:"https://via.placeholder.com/250x250", desc:"Fortalece pele, unhas, cabelos e articulações."},
+  omega3:{title:"Ômega 3", price:"R$ 89,90", img:"https://via.placeholder.com/250x250", desc:"Saúde do coração e cérebro em cápsulas."},
+  multivitaminico:{title:"Multivitamínico", price:"R$ 69,90", img:"https://via.placeholder.com/250x250", desc:"Energia e imunidade para o dia a dia."},
+  hipercalorico:{title:"Hiper Calórico", price:"R$ 119,90", img:"https://via.placeholder.com/250x250", desc:"Ganho de massa muscular e energia extra."},
+  magnesioInositol:{title:"Magnésio Inositol", price:"R$ 59,90", img:"https://via.placeholder.com/250x250", desc:"Relaxamento, equilíbrio e saúde muscular."},
+  pastaAmendoim:{title:"Pasta de Amendoim", price:"R$ 39,90", img:"https://via.placeholder.com/250x250", desc:"Proteína e energia com sabor irresistível."}
 };
 
 function openModal(id){
