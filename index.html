@@ -17,63 +17,98 @@
   }
   body { font-family:'Poppins',sans-serif; background:var(--cinza-claro); color:var(--texto); line-height:1.6; overflow-x:hidden; }
   html { scroll-behavior: smooth; }
+
   .container { width:90%; max-width:1200px; margin:0 auto; }
 
-  header { background:var(--roxo); color:var(--branco); padding:1rem 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.2); }
-  .header-center { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.8rem; }
-  .logo img { height:100px; width:auto; border-radius:10px; }
+  /* Header */
+  header { background:var(--roxo); color:var(--branco); padding:0.6rem 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.2); }
+  .header-wrapper { display:flex; align-items:center; justify-content:space-between; gap:1rem; width:100%; }
+  .logo { display:flex; align-items:center; gap:1rem; }
+  .logo img {
+    height:86px;         /* tamanho da logo no header */
+    width:auto;
+    border-radius:0;
+    object-fit:contain;
+    display:block;
+  }
+  /* quando a tela for pequena reduzimos a logo */
+  @media (max-width:520px){
+    .logo img { height:64px; }
+    nav { display:none; } /* simplificado para mobile */
+  }
+
   nav a { color:var(--branco); margin:0 1rem; text-decoration:none; font-weight:500; transition:0.3s; }
   nav a:hover { color:#ddd; }
 
-  .hero { background: linear-gradient(135deg,var(--roxo),var(--roxo-escuro)); color:var(--branco); text-align:center; padding:6rem 1rem; }
-  .hero h2 { font-size:2.8rem; margin-bottom:1rem; font-weight:700; }
-  .hero p { font-size:1.2rem; margin-bottom:2rem; }
-  .btn { display:inline-block; background:var(--branco); color:var(--roxo); padding:0.9rem 2rem; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s; border:2px solid transparent;}
+  .hero { background: linear-gradient(135deg,var(--roxo),var(--roxo-escuro)); color:var(--branco); text-align:center; padding:5.2rem 1rem; }
+  .hero h2 { font-size:2.4rem; margin-bottom:0.8rem; font-weight:700; }
+  .hero p { font-size:1.05rem; margin-bottom:1.4rem; }
+  .btn { display:inline-block; background:var(--branco); color:var(--roxo); padding:0.75rem 1.6rem; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s; border:2px solid transparent;}
   .btn:hover { background:transparent; color:var(--branco); border:2px solid var(--branco); }
 
-  .produtos { padding:5rem 0; text-align:center; }
-  .produtos h2 { font-size:2.2rem; margin-bottom:2rem; color:var(--roxo-escuro); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
-  .produto { background:var(--branco); border-radius:15px; padding:1.5rem; box-shadow:0 5px 15px rgba(0,0,0,0.08); cursor:pointer; transition: transform 0.3s, box-shadow 0.3s; }
-  .produto:hover { transform:translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
-  .produto img { width:100%; border-radius:10px; margin-bottom:1rem; }
-  .produto h3 { color:var(--roxo); margin-bottom:0.5rem; }
-  .produto p { font-size:1.1rem; font-weight:600; }
+  .produtos { padding:3.6rem 0; text-align:center; }
+  .produtos h2 { font-size:2rem; margin-bottom:1.4rem; color:var(--roxo-escuro); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; padding:0 0.6rem; }
+  .produto { background:var(--branco); border-radius:12px; padding:1rem; box-shadow:0 5px 15px rgba(0,0,0,0.08); cursor:pointer; transition: transform 0.25s, box-shadow 0.25s; }
+  .produto:hover { transform:translateY(-6px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+  .produto img { width:100%; border-radius:8px; margin-bottom:0.8rem; }
+  .produto h3 { color:var(--roxo); margin-bottom:0.3rem; }
+  .produto p { font-size:1rem; font-weight:600; }
 
-  .sobre { background:var(--branco); padding:4rem 1rem; text-align:center; }
-  .sobre h2 { color:var(--roxo); margin-bottom:1.5rem; font-size:2rem; }
-  .sobre p { max-width:800px; margin:0 auto; font-size:1.05rem; color:var(--texto); }
+  .sobre { background:var(--branco); padding:2.6rem 1rem; text-align:center; }
+  .sobre h2 { color:var(--roxo); margin-bottom:0.6rem; font-size:1.6rem; }
+  .sobre p { max-width:800px; margin:0 auto; font-size:1rem; color:var(--texto); }
 
-  .contato { background:var(--roxo); color:var(--branco); text-align:center; padding:4rem 1rem; }
-  .contato h2 { font-size:2rem; margin-bottom:1rem; }
-  .whatsapp { display:inline-flex; align-items:center; gap:0.5rem; background:#25d366; color:#fff; padding:0.9rem 1.8rem; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s;}
-  .whatsapp:hover { transform:scale(1.05); }
+  .contato { background:var(--roxo); color:var(--branco); text-align:center; padding:2.6rem 1rem; }
+  .contato h2 { font-size:1.6rem; margin-bottom:0.6rem; }
+  .whatsapp { display:inline-flex; align-items:center; gap:0.5rem; background:#25d366; color:#fff; padding:0.7rem 1.2rem; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s;}
+  .whatsapp img { display:block; }
 
-  footer { background:var(--roxo-escuro); color:var(--branco); text-align:center; padding:1rem 0; font-size:0.9rem; }
+  footer { background:var(--roxo-escuro); color:var(--branco); text-align:center; padding:0.8rem 0; font-size:0.9rem; }
 
   /* MODAL */
   .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:var(--overlay); display:flex; justify-content:center; align-items:center; opacity:0; visibility:hidden; transition:0.3s; z-index:10000;}
   .modal-overlay.active { opacity:1; visibility:visible; }
-  .modal { background:var(--branco); padding:2rem; border-radius:15px; max-width:500px; width:90%; text-align:center; position:relative;}
-  .modal img { width:100%; border-radius:10px; margin-bottom:1rem; }
-  .modal h3 { color:var(--roxo); margin-bottom:0.5rem; }
-  .modal p { margin-bottom:1rem; font-size:1rem; color:#333; }
-  .close-btn { display:inline-block; background:var(--roxo); color:var(--branco); padding:0.5rem 1.5rem; border-radius:50px; font-weight:600; text-decoration:none; cursor:pointer; transition:0.3s;}
+  .modal { background:var(--branco); padding:1.4rem; border-radius:12px; max-width:520px; width:92%; text-align:center; position:relative;}
+  .modal img { width:100%; border-radius:8px; margin-bottom:0.8rem; }
+  .modal h3 { color:var(--roxo); margin-bottom:0.4rem; }
+  .modal p { margin-bottom:0.8rem; font-size:1rem; color:#333; }
+  .close-btn { display:inline-block; background:var(--roxo); color:var(--branco); padding:0.45rem 1.2rem; border-radius:50px; font-weight:600; text-decoration:none; cursor:pointer; transition:0.3s;}
   .close-btn:hover { background:var(--roxo-escuro); }
+
+  /* small helpers */
+  .nav-and-links { display:flex; align-items:center; gap:1rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container header-center">
-    <div class="logo">
-  <img src="logo-muscleform.jpg" alt="Muscle Form Logo">
-</div>
-    <nav>
-      <a href="#produtos">Produtos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="logo">
+        <!--
+          Atribuí dois caminhos:
+           1) src com o nome exato que você enviou (contém espaços)
+           2) atributo onerror que troca para logo-muscleform.jpg se o primeiro falhar
+           Coloque o arquivo da imagem na mesma pasta do HTML.
+        -->
+        <img id="siteLogo"
+             src="WhatsApp Image 2023-12-13 at 16.08.36 (1).jpg"
+             alt="Logo Muscle Form"
+             onerror="this.onerror=null; this.src='logo-muscleform.jpg';">
+        <div style="display:none;"> <!-- espaço para futura tagline se quiser -->
+          <!-- <strong>Muscle Form</strong> -->
+        </div>
+      </div>
+
+      <div class="nav-and-links" style="margin-left:auto;">
+        <nav>
+          <a href="#produtos">Produtos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -89,19 +124,18 @@
   <div class="container">
     <h2>Nossos Produtos</h2>
     <div class="grid">
-      <div class="produto" onclick="openModal('whey')"><img src="https://via.placeholder.com/250x250" alt="Whey Protein"><h3>Whey Protein</h3><p>R$ 149,90</p></div>
-      <div class="produto" onclick="openModal('creatina')"><img src="https://via.placeholder.com/250x250" alt="Creatina 300g"><h3>Creatina 300g</h3><p>R$ 99,90</p></div>
-      <div class="produto" onclick="openModal('pretreino')"><img src="https://via.placeholder.com/250x250" alt="Pré-Treino Hardcore"><h3>Pré-Treino Hardcore</h3><p>R$ 89,90</p></div>
-      <div class="produto" onclick="openModal('bcaa')"><img src="https://via.placeholder.com/250x250" alt="BCAA 2:1:1"><h3>BCAA 2:1:1</h3><p>R$ 69,90</p></div>
-      <div class="produto" onclick="openModal('glutamina')"><img src="https://via.placeholder.com/250x250" alt="Glutamina 300g"><h3>Glutamina 300g</h3><p>R$ 89,90</p></div>
-      <div class="produto" onclick="openModal('albumina')"><img src="https://via.placeholder.com/250x250" alt="Albumina Natural"><h3>Albumina Natural</h3><p>R$ 49,90</p></div>
-
-      <div class="produto" onclick="openModal('colageno')"><img src="https://via.placeholder.com/250x250" alt="Colágeno"><h3>Colágeno</h3><p>R$ 79,90</p></div>
-      <div class="produto" onclick="openModal('omega3')"><img src="https://via.placeholder.com/250x250" alt="Ômega 3"><h3>Ômega 3</h3><p>R$ 89,90</p></div>
-      <div class="produto" onclick="openModal('multivitaminico')"><img src="https://via.placeholder.com/250x250" alt="Multivitamínico"><h3>Multivitamínico</h3><p>R$ 69,90</p></div>
-      <div class="produto" onclick="openModal('hipercalorico')"><img src="https://via.placeholder.com/250x250" alt="Hiper Calórico"><h3>Hiper Calórico</h3><p>R$ 129,90</p></div>
-      <div class="produto" onclick="openModal('magnesioInositol')"><img src="https://via.placeholder.com/250x250" alt="Magnésio Inositol"><h3>Magnésio Inositol</h3><p>R$ 199,90</p></div>
-      <div class="produto" onclick="openModal('pastaAmendoim')"><img src="https://via.placeholder.com/250x250" alt="Pasta de Amendoim"><h3>Pasta de Amendoim</h3><p>R$ 49,90</p></div>
+      <div class="produto" onclick="openModal('whey')"><img src="https://via.placeholder.com/400x300" alt="Whey Protein"><h3>Whey Protein</h3><p>R$ 149,90</p></div>
+      <div class="produto" onclick="openModal('creatina')"><img src="https://via.placeholder.com/400x300" alt="Creatina 300g"><h3>Creatina 300g</h3><p>R$ 99,90</p></div>
+      <div class="produto" onclick="openModal('pretreino')"><img src="https://via.placeholder.com/400x300" alt="Pré-Treino Hardcore"><h3>Pré-Treino Hardcore</h3><p>R$ 89,90</p></div>
+      <div class="produto" onclick="openModal('bcaa')"><img src="https://via.placeholder.com/400x300" alt="BCAA 2:1:1"><h3>BCAA 2:1:1</h3><p>R$ 69,90</p></div>
+      <div class="produto" onclick="openModal('glutamina')"><img src="https://via.placeholder.com/400x300" alt="Glutamina 300g"><h3>Glutamina 300g</h3><p>R$ 89,90</p></div>
+      <div class="produto" onclick="openModal('albumina')"><img src="https://via.placeholder.com/400x300" alt="Albumina Natural"><h3>Albumina Natural</h3><p>R$ 49,90</p></div>
+      <div class="produto" onclick="openModal('colageno')"><img src="https://via.placeholder.com/400x300" alt="Colágeno"><h3>Colágeno</h3><p>R$ 79,90</p></div>
+      <div class="produto" onclick="openModal('omega3')"><img src="https://via.placeholder.com/400x300" alt="Ômega 3"><h3>Ômega 3</h3><p>R$ 89,90</p></div>
+      <div class="produto" onclick="openModal('multivitaminico')"><img src="https://via.placeholder.com/400x300" alt="Multivitamínico"><h3>Multivitamínico</h3><p>R$ 69,90</p></div>
+      <div class="produto" onclick="openModal('hipercalorico')"><img src="https://via.placeholder.com/400x300" alt="Hiper Calórico"><h3>Hiper Calórico</h3><p>R$ 129,90</p></div>
+      <div class="produto" onclick="openModal('magnesioInositol')"><img src="https://via.placeholder.com/400x300" alt="Magnésio Inositol"><h3>Magnésio Inositol</h3><p>R$ 199,90</p></div>
+      <div class="produto" onclick="openModal('pastaAmendoim')"><img src="https://via.placeholder.com/400x300" alt="Pasta de Amendoim"><h3>Pasta de Amendoim</h3><p>R$ 49,90</p></div>
     </div>
   </div>
 </section>
@@ -143,18 +177,18 @@
 
 <script>
 const produtos = {
-  whey:{title:"Whey Protein",price:"A partir de R$ 149,90",img:"https://via.placeholder.com/250x250",desc:"Suplemento ideal para ganho de massa muscular e recuperação após treinos intensos."},
-  creatina:{title:"Creatina 300g",price:"A partir de R$ 99,90",img:"https://via.placeholder.com/250x250",desc:"Aumenta força e performance nos treinos de alta intensidade."},
-  pretreino:{title:"Pré-Treino Hardcore",price:"A partir de R$ 89,90",img:"https://via.placeholder.com/250x250",desc:"Energético e estimulante para maximizar sua performance antes do treino."},
-  bcaa:{title:"BCAA 2:1:1",price:"A partir de R$ 69,90",img:"https://via.placeholder.com/250x250",desc:"Aminoácidos essenciais para recuperação muscular e redução da fadiga."},
-  glutamina:{title:"Glutamina 300g",price:"A partir de R$ 89,90",img:"https://via.placeholder.com/250x250",desc:"Auxilia na recuperação muscular e fortalece o sistema imunológico."},
-  albumina:{title:"Albumina Natural",price:"A partir de R$ 49,90",img:"https://via.placeholder.com/250x250",desc:"Proteína de alta qualidade, ideal para complementar sua alimentação diária."},
-  colageno:{title:"Colágeno", price:"A partir de R$ 79,90", img:"https://via.placeholder.com/250x250", desc:"Fortalece pele, unhas, cabelos e articulações."},
-  omega3:{title:"Ômega 3", price:"A partir de R$ 89,90", img:"https://via.placeholder.com/250x250", desc:"Saúde do coração e cérebro em cápsulas."},
-  multivitaminico:{title:"Multivitamínico", price:"A partir de R$ 69,90", img:"https://via.placeholder.com/250x250", desc:"Energia e imunidade para o dia a dia."},
-  hipercalorico:{title:"Hiper Calórico", price:"A partir de R$ 129,90", img:"https://via.placeholder.com/250x250", desc:"Ganho de massa muscular e energia extra."},
-  magnesioInositol:{title:"Magnésio Inositol", price:"A partir de R$ 199,90", img:"https://via.placeholder.com/250x250", desc:"Relaxamento, equilíbrio e saúde muscular."},
-  pastaAmendoim:{title:"Pasta de Amendoim", price:"A partir de R$ 49,90", img:"https://via.placeholder.com/250x250", desc:"Proteína e energia com sabor irresistível."}
+  whey:{title:"Whey Protein",price:"A partir de R$ 149,90",img:"https://via.placeholder.com/400x300",desc:"Suplemento ideal para ganho de massa muscular e recuperação após treinos intensos."},
+  creatina:{title:"Creatina 300g",price:"A partir de R$ 99,90",img:"https://via.placeholder.com/400x300",desc:"Aumenta força e performance nos treinos de alta intensidade."},
+  pretreino:{title:"Pré-Treino Hardcore",price:"A partir de R$ 89,90",img:"https://via.placeholder.com/400x300",desc:"Energético e estimulante para maximizar sua performance antes do treino."},
+  bcaa:{title:"BCAA 2:1:1",price:"A partir de R$ 69,90",img:"https://via.placeholder.com/400x300",desc:"Aminoácidos essenciais para recuperação muscular e redução da fadiga."},
+  glutamina:{title:"Glutamina 300g",price:"A partir de R$ 89,90",img:"https://via.placeholder.com/400x300",desc:"Auxilia na recuperação muscular e fortalece o sistema imunológico."},
+  albumina:{title:"Albumina Natural",price:"A partir de R$ 49,90",img:"https://via.placeholder.com/400x300",desc:"Proteína de alta qualidade, ideal para complementar sua alimentação diária."},
+  colageno:{title:"Colágeno", price:"A partir de R$ 79,90", img:"https://via.placeholder.com/400x300", desc:"Fortalece pele, unhas, cabelos e articulações."},
+  omega3:{title:"Ômega 3", price:"A partir de R$ 89,90", img:"https://via.placeholder.com/400x300", desc:"Saúde do coração e cérebro em cápsulas."},
+  multivitaminico:{title:"Multivitamínico", price:"A partir de R$ 69,90", img:"https://via.placeholder.com/400x300", desc:"Energia e imunidade para o dia a dia."},
+  hipercalorico:{title:"Hiper Calórico", price:"A partir de R$ 129,90", img:"https://via.placeholder.com/400x300", desc:"Ganho de massa muscular e energia extra."},
+  magnesioInositol:{title:"Magnésio Inositol", price:"A partir de R$ 199,90", img:"https://via.placeholder.com/400x300", desc:"Relaxamento, equilíbrio e saúde muscular."},
+  pastaAmendoim:{title:"Pasta de Amendoim", price:"A partir de R$ 49,90", img:"https://via.placeholder.com/400x300", desc:"Proteína e energia com sabor irresistível."}
 };
 
 function openModal(id){
@@ -169,7 +203,19 @@ function closeModal(){
   document.getElementById('modalOverlay').classList.remove('active');
 }
 document.getElementById('modalOverlay').addEventListener('click',(e)=>{if(e.target.id==='modalOverlay') closeModal();});
+
+/* Pequeno ajuste: se o usuário quiser abrir o site com a logo já carregada corretamente,
+   podemos tentar forçar mudança de src caso o onerror não execute (a maioria dos navegadores executa) */
+(function tryFixLogo(){
+  const logo = document.getElementById('siteLogo');
+  if(!logo) return;
+  // se a imagem ainda não carregou corretamente em 1s, tenta o nome sem espaços
+  setTimeout(()=> {
+    if(logo.naturalWidth === 0 || logo.naturalHeight === 0) {
+      logo.src = 'logo-muscleform.jpg';
+    }
+  }, 1000);
+})();
 </script>
 </body>
 </html>
-
